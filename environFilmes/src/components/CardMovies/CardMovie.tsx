@@ -15,6 +15,7 @@ import {
   ModalBody,
   ModalHeader
 } from "reactstrap";
+import { date } from "yup";
 
 interface movies {
   id: number;
@@ -25,7 +26,7 @@ interface movies {
   quantity: number;
   photo: string;
   nameauth: string;
-  datemovi: string;
+  datemovie: Date;
   paismovie: string;
   video: string;
 }
@@ -71,7 +72,7 @@ export function CardMovie({ movie }: MoviesProps) {
       >
         <img
           alt="Sample"
-          src={`../../../public/moviesimg/${movie.photo}`}
+          src={`./moviesimg/${movie.photo}`}
           height={500}
           style={{
             borderRadius: "1rem  1rem 0 0"
@@ -84,7 +85,7 @@ export function CardMovie({ movie }: MoviesProps) {
               <div>
                 {movie.tipes.map((tag) => (
                   <h3>
-                    <img src={`../../../public/moviesimg/${tag}`} alt="" />
+                    <img src={`./moviesimg/${tag}`} alt="" />
                   </h3>
                 ))}
               </div>
@@ -110,14 +111,14 @@ export function CardMovie({ movie }: MoviesProps) {
           <ModalContainer>
             <TagContainer>
               <img
-                src={`../../../public/moviesimg/${movie.photo}`}
+                src={`./moviesimg/${movie.photo}`}
                 alt=""
                 style={customImg}
               />
               <div>
                 {movie.tipes.map((tag) => (
                   <h3>
-                    <img src={`../../../public/moviesimg/${tag}`} alt="" />
+                    <img src={`./assets/${tag}`} alt="" />
                   </h3>
                 ))}
               </div>
@@ -145,7 +146,7 @@ export function CardMovie({ movie }: MoviesProps) {
                 controls
               >
                 <source
-                  src={`../../../public/moviesimg/${movie.video}`}
+                  src={`./moviesimg/${movie.video}`}
                   type="video/mp4"
                 ></source>
               </video>

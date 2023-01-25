@@ -65,7 +65,7 @@ export function Home() {
         <div>
           <video id="videoBanner" className="videoBanner" loop autoPlay muted>
             <source
-              src={`../../../public/moviesimg/background.mp4`}
+              src={`./moviesimg/background.mp4`}
               type="video/mp4"
             ></source>
           </video>
